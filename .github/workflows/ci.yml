@@ -47,13 +47,13 @@ jobs:
         run:  docker-compose build
 
       - name: Make DB Migrations
-        run:  docker-compose run --rm django python manage.py migrate
+        run:  docker-compose run --rm backend python manage.py migrate
 
       - name: Run the Stack
         run:  docker-compose up -d
 
       - name: Run Django Tests
-        run:  docker-compose exec -T django pytest
+        run:  docker-compose exec -T backend pytest
 
       - name: Tear down the Stack
         run:  docker-compose down
