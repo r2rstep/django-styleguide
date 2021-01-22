@@ -30,7 +30,7 @@ services:
     depends_on:
       - db
     ports:
-      - 3000:8000
+      - 8000:5000
     env_file:
       - .env
     networks:
@@ -38,6 +38,7 @@ services:
     build:
       context: .
       dockerfile: docker/backend.dockerfile
+    command: /start
 
 volumes:
   app-db-data:
