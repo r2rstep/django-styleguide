@@ -5,6 +5,7 @@ from django_template.common.apis import TopLevelIntegerSerializer, TopLevelCharS
 
 from django.core.exceptions import ValidationError
 
+
 class ErrorFormatterTests(TestCase):
     """
     Test how this behaves by passing different versions of drf ValidationError
@@ -118,7 +119,7 @@ class ErrorFormatterTests(TestCase):
 
         self.assertEqual(actual, expected)
 
-    def test_error_formatter_with_django_validation_error_of_validation_error(self):
+    def test_error_formatter_with_django_validation_error_of_validation_error_none(self):
         actual = ErrorFormatter(ValidationError(ValidationError(None)))()
 
         expected = {
@@ -164,7 +165,7 @@ class ErrorFormatterTests(TestCase):
 
     def test_error_formatter_with_nested_errors_int(self):
         serializer = TopLevelIntegerSerializer(
-            data = {
+            data={
                 'foo': {
                     'bar': 'xyz'
                 },
@@ -198,7 +199,7 @@ class ErrorFormatterTests(TestCase):
 
     def test_error_formatter_with_nested_errors_string(self):
         serializer = TopLevelCharSerializer(
-            data = {
+            data={
                 'foo': {
                     'bar': {}
                 },
