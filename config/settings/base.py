@@ -38,6 +38,7 @@ LOCAL_APPS = [
     'django_template.tasks.apps.TasksConfig',
     'django_template.api.apps.ApiConfig',
     'django_template.users.apps.UsersConfig',
+    'django_template.items.apps.ItemsConfig',
 ]
 
 THIRD_PARTY_APPS = [

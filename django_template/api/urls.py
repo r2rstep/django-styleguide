@@ -6,4 +6,5 @@ urlpatterns = [
     ),
     path('common/', include(('django_template.common.urls', 'common'))),
     path('users/', include(('django_template.users.urls', 'users'))),
+    path('items/', include('django_template.items.urls'))
 ]
